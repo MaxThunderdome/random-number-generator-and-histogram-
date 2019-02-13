@@ -1,0 +1,34 @@
+import random as rand
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import colors
+from matplotlib.ticker import PercentFormatter
+array = [0,0,0,0,0,0,0,0,0,0]
+def function(number):
+    random = rand.randint(1, 10)
+    return random
+def function2():
+    for i in range(0,10000):
+        j = function(i)
+        l = 1
+        while l < 11:
+            if j == l:
+                array[l- 1] += 1
+            l = l + 1
+def main():
+   function2()
+
+if __name__ == "__main__":
+    main()
+print(array)
+N_points = 100000
+n_bins = 20
+
+x = np.random.randn(N_points)
+
+fig, axs = plt.subplots(1, 2, sharey=True, tight_layout=True)
+
+# We can set the number of bins with the `bins` kwarg
+axs[0].hist(x, bins=n_bins)
+
+plt.show()
